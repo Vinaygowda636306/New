@@ -1,12 +1,12 @@
 from pyrogram import Client, filters
 import aiohttp
-from config import API_ID, API_HASH, BOT_TOKEN, API_KEY, API_URL, SUPPORT_GROUP, UPDATES_CHANNEL, WEB_NAME
+from config import 27143201, 553091f2b29f1c827fb4fca91c49b313, 6791456280:AAFNmdzA8XwO_FCehG3y_PghIVQKc2gCvgM, b6c46ec4e64ba5067ed4386d2436dc1dad332db9, https://vikfy.com/member/tools/api, Vikfy_Support, vikfy_official, vikfy
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 bot = Client('AdlinkFly shortener bot',
-             api_id=API_ID,
-             api_hash=API_HASH,
-             bot_token=BOT_TOKEN,
+             api_id=27143201,
+             api_hash=553091f2b29f1c827fb4fca91c49b313,
+             bot_token=6791456280:AAFNmdzA8XwO_FCehG3y_PghIVQKc2gCvgM,
              workers=50,
              sleep_threshold=10)
 
@@ -16,13 +16,13 @@ print("Bot is Started Now")
 @bot.on_message(filters.command('start') & filters.private)
 async def start(client, message):
     btn = [[
-        InlineKeyboardButton('Updates Channel', url=UPDATES_CHANNEL),
-        InlineKeyboardButton('Support Group', url=SUPPORT_GROUP)
+        InlineKeyboardButton('Updates Channel', url=https://t.me/vikfy_official),
+        InlineKeyboardButton('Support Group', url=https://t.me/vikfy_support)
     ],[
         InlineKeyboardButton('Deploy', url='https://github.com/pandaznetwork/Adlinkflyshortnerbot')
     ]]
     text = """**Just send me link and get short link, You can also send multiple links seperated by a space or enter."""
-    await message.reply(f"👋 Hello {message.from_user.mention},\n\nI'm {WEB_NAME} Shortner bot. {text}", reply_markup=InlineKeyboardMarkup(btn))    
+    await message.reply(f"👋 Hello {message.from_user.mention},\n\nI'm {vikfy} Shortner bot. {text}", reply_markup=InlineKeyboardMarkup(btn))    
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
